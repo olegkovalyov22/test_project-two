@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <title>Text with Video Holes</title>
+</head>
+<body>
+
+
+  <div class="container">
+    <video class="video-bg" autoplay muted loop playsinline>
+      <source src="./assets/media/video.mp4" type="video/mp4">
+    </video>
+
+    <div class="overlay">
+      <h1>
+        We’re here <span class="mask">to</span> make<br>
+        healthy <span class="mask">living</span> effortless,<br>
+        so you can <span class="mask">live</span> longer<br>
+        and happier <span class="mask">lives</span>
+      </h1>
+    </div>
+  </div>
+
+  <script>
+    // Копируем текст в data-text для ::before
+    document.querySelectorAll('.mask').forEach(el => {
+      el.setAttribute('data-text', el.textContent);
+    });
+  </script>
+
+
+
+</body>
+</html>
